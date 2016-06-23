@@ -1,0 +1,174 @@
+@font-face {
+	src: url("Aleo-Light.otf");
+	font-family: "Aleo";
+}
+
+@font-face {
+	src: url("AvenirNext-Medium.ttf");
+	font-family: "Avenir Next";
+	font-weight: bold; 
+}
+
+@font-face {
+	src: url("AvenirNext-Regular.ttf");
+	font-family: "Avenir Next";
+	font-weight: normal; 
+}
+
+@font-face {
+	src: url("Avenir-UltraLight.ttf");
+	font-family: "Avenir Next";
+	font-weight: lighter; 
+}
+
+
+body {
+	font-family: "Aleo"; 
+	margin: 0; 
+	padding: 0;
+}
+
+a {
+	font-family: "Avenir Next";
+	font-weight: lighter;
+	text-decoration: none;
+	color: #000;
+}
+
+.action {
+	display: block;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-family: 'Avenir Next';
+	font-weight: normal;
+}
+
+.actions-container {
+	display: block;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-family: 'Avenir Next';
+	font-weight: normal;
+	margin-bottom: 50px;
+}
+
+.actions-container span {
+	display: block;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-family: 'Avenir Next';
+	font-weight: normal;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.request {
+	margin-bottom: 50px;
+}
+
+h1, h2 {
+	margin-top: 0;
+	text-align: center;
+	color: #fff;
+}
+
+h3 {
+	font-family: "Avenir";
+	font-weight: normal;
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+h1 {
+	font-size: 42px;
+	font-weight: normal; 
+	margin-bottom: 15px;
+}
+
+h2 {
+	font-size: 21px;
+	font-weight: normal; 
+	font-family: "Avenir Next"; 
+	text-transform: uppercase;
+}
+
+form {
+	margin-top: -10px;
+	margin-bottom: 100px;
+}
+
+form input {
+	-webkit-appearance: none;
+	border: 1px solid black;
+	outline: none;
+	display: block;
+	padding: 10px;
+	font-family: "Aleo";
+	margin: 15px auto;
+}
+
+input[type="submit"] {
+	background: white;
+}
+
+.logo {
+	margin: 0 auto;
+	display: block;
+	width: 130px;
+	margin-bottom: 20px;
+}
+
+.secondary {
+	margin: 0 auto;
+	margin-top: -130px;
+	cursor: pointer;
+}
+
+.splash {
+	margin: 0;
+	padding: 50px;
+	background: -webkit-linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.39)), url('cityscape.jpg');
+	background: -o-linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.39)), url('cityscape.jpg');
+	background: linear-gradient(rgba(0, 0, 0, 0.39), rgba(0, 0, 0, 0.39)), url('cityscape.jpg');
+	background-size: cover; 
+}
+
+.page {
+	display: none;
+	margin: 0 auto;
+	text-align: center;
+	width: 500px;
+	font-weight: 300;
+}
+
+.page p {
+	margin-top: -10px;
+	font-size: 18px;
+	line-height: 25px;
+}
+
+ul {
+	text-transform: uppercase;
+	font-family: "Avenir Next"; 
+	font-weight: 200;
+	list-style: none;
+	text-align: center;
+	width: auto;
+	margin-top: 20px;
+	margin-left: 0;
+	padding-left: 0;
+	font-weight: lighter;
+}
+
+li {
+	font-size: 25px;
+	font-weight: 300;
+	padding: 35px;
+	display: inline-block;
+}
+
+@media screen and (max-width: 550px) {
+	.page {
+		width: 90%;
+	}
+}

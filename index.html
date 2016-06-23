@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Breeze & Co.</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<img class="secondary logo" src="darklogo.svg">
+<div class="splash">
+	<img class="primary logo" src="logo.svg">
+	<h1>Breeze & Co.</h1>
+	<h2>Web Developent & <br> Consulting Firm</h2>
+</div>
+<ul>
+	<li id="about"><a href="#">About</a></li>
+	<li id="portfolio"><a href="#">Past Work</a></li>
+	<li id="contact"><a href="#">Contact</a></li>
+</ul>
+
+<div class="about page">
+	<p>We are a group of passionate web developers and designers based in Sacramento, California. With over 7 years experience designing and building websites, we know how to work with you to make a professional, high quality website for your business in a short timeframe. </p>
+</div>
+
+<div class="portfolio page">
+
+	<h3>Health Dashboard</h3>
+	<p>Log in with username "demo" and password "breezeandco".</p>
+	<div class="actions-container">
+		<a href="http://lululog.com" target="_blank" class="action">Visit now</a>
+	</div>
+
+	<h3>Personal Portfolio</h3>
+	<div class="actions-container">
+		<a href="http://rbreeze.github.io" target="_blank" class="action">Visit now</a>
+	</div>
+
+	<h3>Better Choices</h3>
+	<div class="actions-container">
+		<a href="http://betterchoiceorganic.herokuapp.com" target="_blank" class="action">Visit now</a>
+	</div>
+
+</div>
+
+<div class="contact page">
+	<h3>Contact Us</h3>
+	<form class="contact" method="POST" action="http://formspree.io/remington.breeze@gmail.com">
+	<input type="text" name="name" placeholder="Name">
+	<input type="text" name="email" placeholder="Email">
+	<input type="text" name="message" placeholder="Message">
+	<div class="submit-container"><input class="button submit" type="submit" value="Submit"></div>
+	</form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		var splashHeight = $('.splash').height();
+		var delay
+
+		var backToHome = function() {
+			$('.secondary').animate({ 'margin-top' : -130, 'margin-bottom' : 0 });
+			$('.primary').delay(500).fadeIn();
+			$('.splash').fadeIn().animate({ 'margin-top' : 0, 'padding' : 50 });
+			$('ul').animate({ 'margin-top' : 20 });
+			$('.page').fadeOut();
+			$('li').css({ 'font-weight' : 300 }); 
+			delay = setTimeout(function() { triggered = false; clearTimeout(delay); }, 1000);
+		}
+
+		var triggered = false; 
+		var currentlySelected = $('#about'); 
+
+		$(window).scroll(function() {
+			if (parseInt($('.secondary').css( 'margin-top' )) >= 30 && triggered == true) {
+				if ($(this).scrollTop() < 0) {
+					backToHome(); 
+				}
+			} else {
+				if ($(this).scrollTop() + $(window).height() > (splashHeight + $('ul').height() + 140) && triggered == false && $('.secondary').queue("fx").length == 0) {
+					currentlySelected.trigger('click');
+				}
+			} 
+		});
+
+		$('li').click(function() {
+			currentlySelected = $(this);
+			$('li').css({ 'font-weight' : 'lighter' });
+			$('.page').fadeOut();
+			$('.splash').animate({ "margin-top" : -splashHeight - 145, 'padding' : 0 });
+			$('.secondary').animate({ 'margin-top' : 30 });
+			$('ul').animate({ 'margin-top' : 170 });
+			$(this).css({ 'font-weight' : 'bold' });
+			triggered = true; 
+		});
+
+		$('.secondary').click(function() {
+			backToHome();
+		});
+
+		$('#about').click(function() {
+			$('.about').fadeIn();
+		});
+
+		$('#portfolio').click(function() {
+			$('.portfolio').fadeIn();
+		});
+
+		$('#contact').click(function() {
+			$('.contact').fadeIn();
+		});
+
+	});
+</script>
+</body>
+</html>
